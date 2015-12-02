@@ -21,6 +21,10 @@ use Arara\Process\Child;
  */
 class Process extends Component
 {
+	/**
+	 * using ProcessTrait
+	 */
+	use ProcessTrait;
 	
 	/**
 	 * @inheritdoc
@@ -28,5 +32,45 @@ class Process extends Component
 	public function init()
 	{
 		parent::init();
+	}
+	
+	/**
+	 * Create a process
+	 * @param Action $action
+	 * @param number $timeout
+	 */
+	public function create(Action $action, $timeout = 0){
+		$this->createControl();
+		$this->process = Child($action, $this->control, $timeout);
+	}
+	
+	/**
+	 * Return the process id (PID).
+	 *
+	 * @return int
+	 */
+	public function getId()
+	{	
+		return $this->process->getId();
+	}
+	
+	/**
+	 * Return TRUE if there is a defined id or FALSE if not.
+	 *
+	 * @return bool
+	 */
+	public function hasId()
+	{
+		return $this->process->hasId();
+	}
+	
+	/**
+	 * Return the process status.
+	 *
+	 * @return Status
+	 */
+	public function getStatus()
+	{
+		return $this->process->getStatus();
 	}
 }
