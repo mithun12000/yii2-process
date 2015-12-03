@@ -14,7 +14,7 @@ use Arara\Process\Control;
  *
  * @author Mithun Mandal <mithun12000@gmail.com>
  */
-abstract class Process extends Component
+abstract class BaseProcess extends Component
 {	
 	/**
 	 *
@@ -25,7 +25,7 @@ abstract class Process extends Component
 	/**
 	 * Create Process
 	 */
-	public function create();
+	abstract public function create();
 	
 	/**
 	 * Create Control

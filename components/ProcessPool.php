@@ -25,14 +25,6 @@ class ProcessPool extends BaseProcess
 	use ProcessTrait;
 	
 	/**
-	 * @inheritdoc
-	 */
-	public function init()
-	{
-		parent::init();
-	}
-	
-	/**
 	 * Create a New Pool
 	 * @param unknown $processLimit
 	 * @param string $autoStart

@@ -19,20 +19,12 @@ use Arara\Process\Child;
  *
  * @author Mithun Mandal <mithun12000@gmail.com>
  */
-class Process extends Component
+class Process extends BaseProcess
 {
 	/**
 	 * using ProcessTrait
 	 */
 	use ProcessTrait;
-	
-	/**
-	 * @inheritdoc
-	 */
-	public function init()
-	{
-		parent::init();
-	}
 	
 	/**
 	 * Create a process
