@@ -20,7 +20,7 @@ abstract class BaseProcess extends Component
 	 *
 	 * @var Control $control
 	 */
-	protected $control;
+	public $control;
 	
 	/**
 	 * Create Process
@@ -40,5 +40,17 @@ abstract class BaseProcess extends Component
 	 */
 	public function flush($seconds = 0){
 		$this->control->flush($seconds);
+	}
+	
+	/**
+	 * Create Pid file for process
+	 * @param string $appName
+	 * @param string $path
+	 */
+	public function createPidfile($appName, $path='/var/run'){
+		if(!$this->control){
+			$this->createControl();
+		}
+		return new Pidfile($this->control, $appName, $path);
 	}
 }

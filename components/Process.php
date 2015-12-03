@@ -31,8 +31,12 @@ class Process extends BaseProcess
 	 * @param Action $action
 	 * @param number $timeout
 	 */
-	public function create(Action $action, $timeout = 0){
-		$this->createControl();
+	public function create(Action $action, $timeout = 0, BaseProcess $pcontrol = null){
+		if($pcontrol && $pcontrol->control instanceof Control){
+			$this->control = $control->control;
+		}else{
+			$this->createControl();
+		}
 		$this->process = Child($action, $this->control, $timeout);
 	}
 	
