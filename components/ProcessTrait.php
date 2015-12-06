@@ -19,7 +19,7 @@ trait ProcessTrait{
 	 * 
 	 * @var Process
 	 */
-	protected $process;
+	public $process;
 	
 	/**
 	 * Process Wait 

@@ -25,9 +25,14 @@ class ProcessPool extends BaseProcess
 	use ProcessTrait;
 	
 	/**
+	 * Using Process Control Trait
+	 */
+	use ProcessControlTrait;
+	
+	/**
 	 * Create a New Pool
-	 * @param unknown $processLimit
-	 * @param string $autoStart
+	 * @param integer $processLimit
+	 * @param boolean $autoStart
 	 */
 	public function create($processLimit, $autoStart = false){
 		$this->process = new Pool($processLimit, $autoStart);

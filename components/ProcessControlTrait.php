@@ -10,11 +10,11 @@ use Arara\Process\Control;
 
 
 /**
- * Base Process
+ * ProcessControlTrait Trait
  *
  * @author Mithun Mandal <mithun12000@gmail.com>
  */
-abstract class BaseProcess extends Component
+trait ProcessControlTrait
 {	
 	/**
 	 *
@@ -22,10 +22,7 @@ abstract class BaseProcess extends Component
 	 */
 	public $control;
 	
-	/**
-	 * Create Process
-	 */
-	abstract public function create();
+	
 	
 	/**
 	 * Create Control

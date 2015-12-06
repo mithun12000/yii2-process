@@ -7,6 +7,7 @@ namespace mithun\process\components;
 use Yii;
 use yii\base\Component;
 use yii\base\InvalidConfigException;
+use yii\base\InvalidParamException;
 use Arara\Process\Action\Action;
 use Arara\Process\Action\Callback;
 use Arara\Process\Control;
@@ -27,17 +28,22 @@ class Process extends BaseProcess
 	use ProcessTrait;
 	
 	/**
+	 * Using Process Control Trait
+	 */
+	use ProcessControlTrait;
+	
+	/**
 	 * Create a process
 	 * @param Action $action
 	 * @param number $timeout
 	 */
 	public function create(Action $action, $timeout = 0, BaseProcess $pcontrol = null){
 		if($pcontrol && $pcontrol->control instanceof Control){
-			$this->control = $control->control;
+			$this->control = $pcontrol->control;
 		}else{
 			$this->createControl();
 		}
-		$this->process = Child($action, $this->control, $timeout);
+		$this->process = new Child($action, $this->control, $timeout);
 	}
 	
 	/**
