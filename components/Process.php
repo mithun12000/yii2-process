@@ -36,8 +36,9 @@ class Process extends Component
 	 * Create a process
 	 * @param Action $action
 	 * @param number $timeout
+	 * @param ProcessPool $pcontrol
 	 */
-	public function create(Action $action, $timeout = 0, BaseProcess $pcontrol = null){
+	public function create(Action $action, $timeout = 0, ProcessPool $pcontrol = null){
 		if($pcontrol && $pcontrol->control instanceof Control){
 			$this->control = $pcontrol->control;
 		}else{
