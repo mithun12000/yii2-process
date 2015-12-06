@@ -20,7 +20,7 @@ use Arara\Process\Child;
  *
  * @author Mithun Mandal <mithun12000@gmail.com>
  */
-class Process extends BaseProcess
+class Process extends Component
 {
 	/**
 	 * using ProcessTrait

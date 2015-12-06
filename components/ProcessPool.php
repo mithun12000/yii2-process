@@ -17,7 +17,7 @@ use Arara\Process\Pool;
  *
  * @author Mithun Mandal <mithun12000@gmail.com>
  */
-class ProcessPool extends BaseProcess
+class ProcessPool extends Component
 {
 	/**
 	 * using ProcessTrait
@@ -48,17 +48,17 @@ class ProcessPool extends BaseProcess
 	
 	/**
 	 * Attach Process to this Pool
-	 * @param BaseProcess $action
+	 * @param Process $action
 	 */
-	public function attach(BaseProcess $action){
+	public function attach(Process $action){
 		$this->process->attach($action->process);
 	}
 	
 	/**
 	 * Attach Process to this Pool
-	 * @param BaseProcess $action
+	 * @param Process $action
 	 */
-	public function detach(BaseProcess $action){
+	public function detach(Process $action){
 		$this->process->detach($action->process);
 	}
 }
