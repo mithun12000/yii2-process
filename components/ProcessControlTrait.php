@@ -7,7 +7,7 @@ namespace mithun\process\components;
 use Yii;
 use yii\base\Component;
 use Arara\Process\Control;
-
+use Arara\Process\Pidfile;
 
 /**
  * ProcessControlTrait Trait
