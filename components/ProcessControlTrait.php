@@ -48,6 +48,6 @@ trait ProcessControlTrait
 		if(!$this->control){
 			$this->createControl();
 		}
-		return new Pidfile($this->control, $appName, $path);
+		return new Pidfile($this->control, strtolower($appName), $path);
 	}
 }
