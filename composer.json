@@ -18,7 +18,6 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
-        "ext-pcntl": "*",
         "arara/process":"*"
     },
     "autoload": {
